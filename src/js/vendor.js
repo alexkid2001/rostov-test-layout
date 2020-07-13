@@ -14,7 +14,7 @@ const initConnect = () => {
 
 	lastConnectors.forEach(item => {
 		const prevElem = item.previousElementSibling;
-		const parent = item.parentElement.parentElement;
+		const parent = item.parentElement;
 		if (prevElem.classList.contains('point')) {
 			const top = prevElem.offsetTop; // prevElem.getBoundingClientRect().top;
 			const height = prevElem.getBoundingClientRect().height;
@@ -28,13 +28,16 @@ const initConnect = () => {
 
 	firstConnectors.forEach(item => {
 		const nextElem = item.nextElementSibling;
-		const parent = item.parentElement.parentElement;
+		const parentParent = item.parentElement.parentElement;
+		const parent = item.parentElement;
+		console.dir(parent.offsetTop);
 		if (nextElem.classList.contains('point')) {
 			const top = nextElem.offsetTop;
 			const height = nextElem.getBoundingClientRect().height;
-			const center = height / 2 + top;
+			const center = height - height / 2;
 			// item.style.height = parentHeight - center + 32 + 'px';
-			item.style.height = center + 22 - 5 + 'px';
+			item.style.bottom = center + 5 + 'px';
+			item.style.top = 0 - parent.offsetTop - 5 + 'px';
 		}
 	})
 
