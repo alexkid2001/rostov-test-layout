@@ -1,0 +1,25 @@
+.status {
+	display: flex;
+	align-items: center;
+	font-size: 17px;
+	font-weight: bold;
+
+	&__icon {
+		margin-right: 3px;
+		font-size: 16px;
+	}
+
+	&--courier {
+		.font-icon {
+			color: $color-black;
+		}
+	}
+
+	&--done {
+		.font-icon {
+			color: $color-accent;
+			font-size: 14px;
+		}
+	}
+
+}

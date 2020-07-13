@@ -1,0 +1,12 @@
+include mixins/input
+include mixins/datepicker
+
+mixin filterRules
+	.filter-rules
+		+datepicker('04.12.2019 10:00', 'C')
+		+datepicker('20.12.2019 10:00', 'По')
+		+input('1289239296', 'Внейшний ID')
+		+input('2818297', 'ID доставки')
+		+input('2818296', 'ID группы')
+		+input('', '', 'Наименование')
+		+button('Найти')

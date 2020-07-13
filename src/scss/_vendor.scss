@@ -1,0 +1,43 @@
+@import "../../node_modules/normalize.css/normalize";
+
+body {
+	font-family: $font-family-roboto;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.834;
+	background-color: $color-bg;
+}
+
+.wrapper {
+	display: flex;
+	min-height: 100vh;
+}
+
+.main-content {
+	flex-basis: 100%;
+	flex: 1;
+	padding: 30px 42px;
+
+	& > *:nth-child(n+2) {
+		margin-top: 26px;
+	}
+
+	@media screen and (max-width: 999px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@import "vendor/font-icon";
+@import "vendor/side";
+@import "vendor/nav";
+@import "vendor/content-block";
+@import "vendor/filter";
+@import "vendor/input";
+@import "vendor/datepicker";
+@import "vendor/button";
+@import "vendor/status";
+@import "vendor/order";
+@import "vendor/point";
+@import "vendor/info-cell";
+@import "vendor/connect";

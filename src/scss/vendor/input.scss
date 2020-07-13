@@ -1,0 +1,27 @@
+.input {
+	width: auto;
+
+	&__title {
+		color: #aaa;
+	}
+
+	input {
+		border-radius: 4px;
+		border-width: 1px;
+		//outline: none;
+		padding: 9px 10px 5px 10px;
+		color: $color-dove-gray;
+		font-size: 16px;
+		width: 100%;
+
+
+		&::placeholder {
+			font-size: inherit;
+			color: $color-dove-gray;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

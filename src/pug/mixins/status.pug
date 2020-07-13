@@ -1,0 +1,8 @@
+include font-icon
+
+mixin status(title, icon)
+	.status(class!= attributes.class)
+		if icon
+			.status__icon
+				+fontIcon(icon)
+		.status__title= title

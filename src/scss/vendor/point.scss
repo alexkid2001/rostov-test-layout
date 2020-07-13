@@ -1,0 +1,23 @@
+.point {
+	font-size: 14.3px;
+	line-height: 1.4;
+	padding-left: 33px;
+	position: relative;
+
+	&__title {
+		margin-right: 2px;
+		font-weight: bold;
+	}
+
+	&:before {
+		content: '\e90B';
+		font-family: 'iconetm';
+		color: rgba($color-dove-gray, 0.5);
+		font-size: 14px;
+		position: absolute;
+		left: 5px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+}

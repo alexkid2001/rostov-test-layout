@@ -1,0 +1,6 @@
+mixin button(title, icon)
+	.button(class!= attributes.class)
+		if icon
+			.button__icon
+				+fontIcon(icon)
+		span!= title

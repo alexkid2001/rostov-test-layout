@@ -1,0 +1,16 @@
+.connect {
+	position: absolute;
+	left: 8px;
+	margin: 0 !important;
+	width: 7px;
+	//height: 20px;
+	background: radial-gradient(circle, rgba($color-dove-gray, 0.5) 2px, transparent 3px) 7px 7px/7px 7px;
+
+	&--first {
+		top: -22px;
+	}
+
+	&--last {
+		//bottom: -32px;
+	}
+}

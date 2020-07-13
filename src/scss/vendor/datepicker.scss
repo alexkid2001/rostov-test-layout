@@ -1,0 +1,22 @@
+.datepicker {
+	width: 122px;
+
+	&__title {
+		color: #aaa;
+	}
+
+	input {
+		border: none;
+		font-size: 15.5px;
+		color: $color-accent;
+		padding: 9px 0 5px;
+		font-weight: 100;
+		cursor: pointer;
+		width: 100%;
+
+		&:focus {
+			outline: none;
+			border: none;
+		}
+	}
+}

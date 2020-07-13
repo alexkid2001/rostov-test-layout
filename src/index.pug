@@ -1,0 +1,94 @@
+extends pug/base
+
+include pug/mixins/font-icon
+include pug/filter-rules
+include pug/mixins/order-card
+
+prepend vars
+	//-
+
+append vars
+	//-
+
+block content
+	.wrapper
+		include pug/side
+		.main-content
+			.content-block.content-block--filter
+				.filter.open
+					.filter__title 	Фильтр
+				+filterRules
+				+fontIcon('filter').filter-reset
+			+orderCard({
+				group_num: '№ группы 2629',
+				orders: [
+					{
+						status: 'Курьер у отправителя',
+						status_icon: 'directions',
+						status_type: 'courier',
+						doc: 'Счет-фактуры контрагентам',
+						number: '№ 336837',
+						date: '20 июня 2018',
+						time: '16:20',
+						sum: '840 ₽',
+						weight: '3 кг',
+						addresses:[
+							{
+								title: 'Отправитель:',
+								contact: 'Константин Александрович, +7 863 754-19-90',
+								address: 'м.Белорусская 5-я Ямского Поля ул, 7 корпус 2, Москва'
+							},
+							{
+								title: 'Получатель:',
+								contact: 'Анастасия Романова, +7 921 150-80-30',
+								address: 'м.Динамо,ул Верхняя московская, 25 корпус 1, Москва'
+							}
+						]
+					},
+					{
+						status: 'Курьер у отправителя',
+						status_icon: 'directions',
+						status_type: 'courier',
+						doc: 'Счет-фактуры контрагентам',
+						number: '№ 336838',
+						date: '20 июня 2018',
+						time: '20:20',
+						sum: '920 ₽',
+						weight: '2 кг',
+						addresses:[
+							{
+								title: 'Получатель:',
+								contact: 'Денис Константинопольский, +7 911 260-50-40',
+								address: 'м.Динамо,ул Генерала Крылова, 130 корпус 2, Москва'
+							}
+						]
+					}
+				]
+			})
+			+orderCard({
+				orders: [
+					{
+						status: 'Выполнена',
+						status_icon: 'check',
+						status_type: 'done',
+						doc: 'NDG Absolute Origin',
+						number: '№ 336839',
+						date: '18 июня 2018',
+						time: '18:30',
+						sum: '360 ₽',
+						weight: '2 кг',
+						addresses:[
+							{
+								title: 'Отправитель:',
+								contact: 'Константин Александрович, +7 863 754-19-00',
+								address: 'м.Белорусская 5-я Ямского Поля ул, 7 корпус 2, Москва'
+							},
+							{
+								title: 'Получатель:',
+								contact: 'Анастасия Романова, +7 921 150-80-30',
+								address: 'м.Динамо,ул Верхняя московская, 25 корпус 1, Москва'
+							}
+						]
+					}
+				]
+			})

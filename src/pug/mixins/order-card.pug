@@ -1,0 +1,47 @@
+include button
+include info-cell
+include status
+include point
+
+mixin orderCard(obj)
+	.order-block
+		each order, orderIndex in obj.orders
+			.order
+				if orderIndex == 0
+					.order__action
+						if obj.orders.length > 1
+							+button('Посторить группу', 'refresh').button--link
+							+button('Закрыть группу', 'accept').button--link
+						else
+							+button('Повторить', 'refresh').button--link
+							+button('Закрыть', 'accept').button--link
+						if obj.group_num
+							.order__subtitle=  obj.group_num
+				.order__details
+					.order__info-block
+						.order__description
+							.order__status
+								+status(order.status, order.status_icon)(class= order.status_type ? 'status--' + order.status_type : '')
+							.order__doc= order.doc
+							.order__info
+								span.order__number= order.number
+								span.order__date= order.date
+									span.order__time
+										+fontIcon('clock')
+										= order.time
+						+infoCell('стоимость', order.sum)
+						+infoCell('вес', order.weight)
+					.order__points
+						if orderIndex > 0
+							.connect.connect--first
+						each address, index in order.addresses
+							+point(address.title, address.contact, address.address)
+							if index < order.addresses.length - 1
+								.connect.connect--middle
+						if orderIndex == 0 && obj.orders.length > 1
+							.connect.connect--last
+
+
+
+
+
